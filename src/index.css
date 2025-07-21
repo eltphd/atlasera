@@ -1,0 +1,150 @@
+/*
+ * Global styles for the Atlas ERA web app. These CSS rules define
+ * the dark, atmospheric look that mirrors the designs supplied by
+ * the user. Colour variables are defined at the root level for
+ * easy adjustments. A small amount of utility styling helps lay
+ * out navigation and card elements consistently.
+ */
+
+/* Colour palette */
+:root {
+  --bg-colour: #010a1a;
+  --primary: #f1e4c4;
+  --secondary: #98b9b5;
+  --accent: #c8463c;
+  --button-bg: #00545d;
+  --button-hover: #0e7d87;
+  --card-bg: rgba(4, 16, 32, 0.75);
+  --text-muted: #9eaac1;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: var(--bg-colour);
+  color: var(--primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Navigation bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+nav .logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+nav li {
+  color: var(--primary);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+nav li:hover {
+  color: var(--secondary);
+}
+
+nav .cta {
+  padding: 8px 18px;
+  background-color: var(--accent);
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+nav .cta:hover {
+  background-color: #e15b4c;
+}
+
+/* Header section */
+header {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+/* Pillar card layout */
+.pillars-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 40px;
+}
+
+.pillar-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  min-width: 260px;
+  max-width: 260px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pillar-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.pillar-card h3 {
+  font-size: 1.25rem;
+  margin: 16px 16px 8px;
+}
+
+.pillar-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0 16px 16px;
+  flex-grow: 1;
+}
+
+.pillar-card button {
+  margin: 0 16px 20px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--button-bg);
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pillar-card button:hover {
+  background-color: var(--button-hover);
+}
