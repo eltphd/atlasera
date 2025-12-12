@@ -1,310 +1,351 @@
-# Atlas ERA - Web Application
+# Atlas Education Research Association (Atlas ERA)
 
-## What This Repository Is
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://github.com/eltphd/atlasera/workflows/Deploy/badge.svg)](https://github.com/eltphd/atlasera/actions)
+[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)](https://github.com/eltphd/atlasera/releases)
 
-This repository contains the web application for the **Atlas Education Research Association (Atlas ERA)**, a modern, single-page React application that showcases the organization's research pillars and mission. The application features a dark, atmospheric design with a focus on presenting five core research areas through an interactive card-based interface.
-
-## Purpose
-
-The Atlas ERA web application serves as a digital showcase for the organization's research initiatives, providing visitors with an overview of the five key research pillars:
-
-1. **Research & Inquiry** - Cultivating critical thinking and investigation
-2. **Learning Ecosystems** - Designing holistic educational environments
-3. **Knowledge Mobilization** - Translating research into practice
-4. **Global Collaborations** - Forging partnerships across borders
-5. **Applied Innovation** - Bridging ideas and technology for impact
-
-The application is designed to be:
-- **Informative**: Clearly presents the organization's research focus areas
-- **Professional**: Features a sophisticated dark theme with elegant typography
-- **Responsive**: Adapts to different screen sizes with a horizontal scrolling card layout
-- **Modern**: Built with current web technologies for optimal performance
-
-## Technology Stack
-
-This project is built using:
-
-- **React 18.2.0** - Modern UI library for building interactive user interfaces
-- **Vite 4.5.0** - Fast build tool and development server
-- **JavaScript (JSX)** - Component-based development with JSX syntax
-- **CSS3** - Custom styling with CSS variables for theming
-
-### Development Dependencies
-
-- **@vitejs/plugin-react** - Vite plugin for React support with Fast Refresh
-- **Vite** - Next-generation frontend build tool
-
-## Project Structure
-
-```
-atlasera/
-├── index.html              # Main HTML entry point
-├── package.json            # Project dependencies and scripts
-├── vite.config.js          # Vite configuration
-├── LICENSE                 # MIT License
-├── README.md               # This file
-└── src/
-    ├── main.jsx            # React application entry point
-    ├── App.jsx             # Main application component
-    ├── index.css           # Global styles and theme
-    └── assets/             # Image assets
-        ├── research.png
-        ├── learning.png
-        ├── knowledge.png
-        ├── global.png
-        └── innovation.png
-```
-
-## Getting Started
-
-### Prerequisites
-
-Before you begin, ensure you have the following installed:
-
-- **Node.js** (version 14 or higher recommended)
-- **npm** (comes with Node.js) or **yarn**
-
-### Installation
-
-1. **Clone the repository** (if you haven't already):
-   ```bash
-   git clone <repository-url>
-   cd atlasera
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-   This will install all required dependencies listed in `package.json`, including React, React DOM, Vite, and the React plugin.
-
-### Running the Development Server
-
-To start the development server with hot module replacement:
-
-```bash
-npm run dev
-```
-
-The application will be available at `http://localhost:5173` (or another port if 5173 is in use). Vite will automatically open your default browser, or you can navigate to the URL manually.
-
-**Features of the development server:**
-- **Hot Module Replacement (HMR)**: Changes to your code are instantly reflected in the browser
-- **Fast Refresh**: React components update without losing their state
-- **Fast builds**: Vite's optimized build process provides near-instant server startup
-
-### Building for Production
-
-To create an optimized production build:
-
-```bash
-npm run build
-```
-
-This command will:
-- Bundle and minify your code
-- Optimize assets
-- Generate static files in the `dist/` directory
-
-The production build is optimized for:
-- Smaller file sizes
-- Better performance
-- Browser compatibility
-
-### Previewing the Production Build
-
-To preview the production build locally before deploying:
-
-```bash
- npm run preview
-```
-
-This serves the built application from the `dist/` directory, simulating how it will behave in production.
-
-## How to Use
-
-### For Developers
-
-#### Customizing Research Pillars
-
-The research pillars are defined in the `App.jsx` file. To modify them:
-
-1. Open `src/App.jsx`
-2. Locate the `pillars` array (lines 18-49)
-3. Modify the `title`, `description`, or `image` properties
-4. Add or remove pillars by adding/removing objects from the array
-
-Example:
-```jsx
-const pillars = [
-  {
-    key: 'research',
-    title: 'Your Title Here',
-    description: 'Your description here',
-    image: researchImg, // Import the image at the top of the file
-  },
-  // Add more pillars...
-];
-```
-
-#### Customizing Styles
-
-The application uses CSS variables for easy theming. To change colors:
-
-1. Open `src/index.css`
-2. Modify the CSS variables in the `:root` selector (lines 10-19):
-
-```css
-:root {
-  --bg-colour: #010a1a;        /* Background color */
-  --primary: #f1e4c4;          /* Primary text color */
-  --secondary: #98b9b5;        /* Secondary/accent text */
-  --accent: #c8463c;           /* Accent color (buttons, highlights) */
-  --button-bg: #00545d;        /* Button background */
-  --button-hover: #0e7d87;     /* Button hover state */
-  --card-bg: rgba(4, 16, 32, 0.75); /* Card background */
-  --text-muted: #9eaac1;       /* Muted text color */
-}
-```
-
-#### Adding New Images
-
-To add new images:
-
-1. Place image files in the `src/assets/` directory
-2. Import them in `App.jsx`:
-   ```jsx
-   import newImage from './assets/new-image.png';
-   ```
-3. Use them in your pillar configuration
-
-#### Modifying Navigation
-
-The navigation bar is defined in `App.jsx` (lines 54-62). To modify:
-
-- Change the logo text in the `.logo` div
-- Add/remove navigation items in the `<ul>` list
-- Modify the CTA (Call-to-Action) button text or styling
-
-### For End Users
-
-The application is straightforward to use:
-
-1. **Navigation**: Use the top navigation bar to access different sections (currently placeholder links)
-2. **Research Pillars**: Scroll horizontally through the research pillar cards
-3. **Learn More**: Click the "Learn More" button on any pillar card (currently a placeholder)
-4. **Join**: Click the "Join" button in the navigation bar (currently a placeholder)
-
-## Development Workflow
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-
-### Code Style
-
-- The project uses **JSX** for component structure
-- **Functional components** with React hooks (when needed)
-- **CSS modules** approach with global styles in `index.css`
-- **Component-based architecture** - main logic in `App.jsx`
-
-### Best Practices
-
-1. **Component Organization**: Keep components modular and reusable
-2. **Asset Management**: Store all images in the `src/assets/` directory
-3. **Styling**: Use CSS variables for consistent theming
-4. **Performance**: Images are statically imported to ensure proper bundling
-
-## Features
-
-### Current Features
-
-- ✅ Responsive navigation bar with logo and menu items
-- ✅ Header section with title and description
-- ✅ Five research pillar cards with images, titles, and descriptions
-- ✅ Horizontal scrolling card layout
-- ✅ Dark theme with elegant color palette
-- ✅ Hover effects on interactive elements
-- ✅ Fast development experience with Vite
-
-### Future Enhancement Opportunities
-
-- [ ] Add routing for different pages (Programs, Membership, Join)
-- [ ] Implement "Learn More" functionality for each pillar
-- [ ] Add animations and transitions
-- [ ] Create individual pages for each research pillar
-- [ ] Add contact forms or membership registration
-- [ ] Implement responsive mobile menu
-- [ ] Add accessibility improvements (ARIA labels, keyboard navigation)
-- [ ] Integrate with a backend API
-- [ ] Add content management capabilities
-
-## Browser Support
-
-The application is built with modern web standards and supports:
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-For older browser support, you may need to add polyfills or transpilation configurations.
-
-## Deployment
-
-### Static Hosting
-
-Since this is a static React application, it can be deployed to any static hosting service:
-
-- **Vercel**: Connect your GitHub repository for automatic deployments
-- **Netlify**: Drag and drop the `dist` folder or connect via Git
-- **GitHub Pages**: Use GitHub Actions to build and deploy
-- **AWS S3 + CloudFront**: Upload `dist` folder to S3 bucket
-- **Any web server**: Upload the contents of `dist` to your web server
-
-### Deployment Steps
-
-1. Build the application: `npm run build`
-2. Upload the contents of the `dist/` directory to your hosting service
-3. Configure your hosting service to serve `index.html` for all routes (for SPA routing)
-
-## Troubleshooting
-
-### Common Issues
-
-**Port already in use:**
-- Vite will automatically try the next available port
-- Or specify a port: `npm run dev -- --port 3000`
-
-**Dependencies not installing:**
-- Delete `node_modules` and `package-lock.json`
-- Run `npm install` again
-
-**Build errors:**
-- Ensure all image imports are correct
-- Check that all assets exist in the `src/assets/` directory
-- Verify React component syntax is correct
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contributing
-
-When contributing to this project:
-
-1. Create a feature branch
-2. Make your changes
-3. Test thoroughly
-4. Submit a pull request
-
-## Contact & Support
-
-For questions or support regarding this application, please refer to the repository maintainers or create an issue in the repository.
+**Building the infrastructure for a global network of worldschooling educators and researchers**
 
 ---
 
-**Built with ❤️ for Atlas Education Research Association**
+## 🌍 Mission
+
+Atlas ERA is a research association and community of practice focused on designing, studying, and scaling alternative education models for neurodivergent and mobile learners. We bridge academic rigor with lived experience to create evidence-based frameworks for learning ecosystems that prioritize student agency, cultural responsiveness, and family mobility.
+
+### Our North Star
+Create a global association of worldschooling educators and researchers who collaboratively advance the field through:
+- 🔬 Shared research infrastructure (measurement tools, longitudinal studies)
+- 🌐 Cross-border knowledge exchange and peer learning  
+- 📊 Community-centered evaluation frameworks
+- 📚 Public scholarship accessible to families and practitioners
+
+---
+
+## 🧩 How Atlas ERA Fits the Ecosystem
+
+Atlas ERA serves as the **research backbone** for a portfolio of mission-driven ventures:
+
+| Venture | Atlas ERA's Role |
+|---------|-----------------|
+| **[Feelings Unplugged](https://feelingsunplugged.com)** | Evidence generation for teen mental health interventions |
+| **[Measurement Ally](https://measurementally.com)** | Research methodologies + assessment frameworks |
+| **BASE Framework** | Theoretical grounding + outcome measurement |
+| **Global Curriculum Estates** | Learning environment design + efficacy studies |
+| **[BeaRita Foundation](https://bearita.org)** | Community-centered research partnerships |
+
+This web application is the **public face** of our research pillars and membership network.
+
+---
+
+## 🎯 Research Focus Areas
+
+### 1. **Worldschooling Pedagogies**
+How do families integrate travel, cultural immersion, and self-directed learning? What frameworks support educational continuity across borders?
+
+**Questions We Study:**
+- Learning trajectories of mobile vs. place-based students
+- Cultural competence development through immersion
+- Family decision-making around educational sovereignty
+
+### 2. **Neurodivergent Learning Ecosystems**  
+Designing trauma-informed, sensory-responsive environments that center ADHD/autistic brilliance rather than pathologize difference.
+
+**Questions We Study:**
+- Universal Design for Learning in alternative settings
+- Sensory accommodations in family-based education
+- Social-emotional development outside traditional peer structures
+
+### 3. **Mobile Learning Infrastructures**
+Digital tools, asynchronous community, and portable credentialing for families who reject traditional schooling.
+
+**Questions We Study:**
+- Technology-mediated learning for distributed families
+- Digital badging and competency-based assessment
+- Asynchronous collaboration models
+
+### 4. **Community-Centered Evaluation**
+Measurement approaches that honor non-traditional learning paths and family sovereignty over educational decisions.
+
+**Questions We Study:**
+- Participatory action research with marginalized communities
+- Non-deficit assessment frameworks
+- Longitudinal outcomes of alternative education
+
+### 5. **Global Collaborations**
+Building sustainable international partnerships between researchers, practitioners, and worldschooling networks.
+
+**Questions We Study:**
+- Knowledge mobilization across cultural contexts
+- Cross-national policy analysis
+- Research infrastructure for distributed teams
+
+---
+
+## 🏗️ Technical Implementation
+
+### Tech Stack
+
+**Frontend**
+- React 18.2 - Component-based UI library
+- Vite 5.0 - Fast build tool with HMR
+- React Router 6 - Client-side routing
+- TailwindCSS - Utility-first styling
+- Recharts - Data visualization
+
+**Backend** (Planned Q2 2026)
+- Node.js + Express OR Python FastAPI
+- PostgreSQL - Relational database
+- Firebase - Real-time data + authentication
+- Stripe - Payment processing
+
+**Infrastructure**
+- Vercel - Frontend hosting + edge functions
+- GitHub Actions - CI/CD pipeline
+- Cloudflare - CDN + DDoS protection
+
+### Architecture Overview
+
+```
+┌─────────────────┐
+│   Users         │
+└────────┬────────┘
+         │
+    ┌────▼─────┐
+    │  Vercel  │ ← Static React SPA
+    │  (CDN)   │
+    └────┬─────┘
+         │
+    ┌────▼────────────┐
+    │  API Gateway    │ ← (Planned Q2 2026)
+    │  (Express/      │
+    │   FastAPI)      │
+    └────┬────────────┘
+         │
+    ┌────▼─────┬──────────┬─────────┐
+    │          │          │         │
+┌───▼───┐  ┌──▼──┐   ┌───▼───┐  ┌─▼──┐
+│Postgres│ │Firebase│ │ Stripe │ │Google│
+│        │ │ (Auth) │ │(Payment)│ │Drive│
+└────────┘ └────────┘ └────────┘ └─────┘
+```
+
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for detailed system design.
+
+### Planned Integrations
+- **Google Drive**: Research library sync
+- **Notion**: Content management
+- **Stripe**: Membership payments
+- **SendGrid**: Email automation
+- **Mixpanel/PostHog**: Analytics
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ ([Download](https://nodejs.org/))
+- npm 9+ (comes with Node.js)
+
+### Installation
+
+```bash
+# Clone repository
+git clone https://github.com/eltphd/atlasera.git
+cd atlasera
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`
+
+### Available Scripts
+
+```bash
+npm run dev      # Start dev server with HMR
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm test         # Run unit tests
+npm run lint     # Check code quality
+npm run format   # Auto-format code
+```
+
+---
+
+## 📁 Project Structure
+
+```
+atlasera/
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── navigation/      # Header, nav menu
+│   │   ├── pillars/         # Research pillar cards
+│   │   ├── membership/      # Tier comparison, forms
+│   │   └── layout/          # Hero, footer, wrappers
+│   ├── pages/               # Route-level components
+│   ├── utils/               # Helper functions
+│   ├── App.jsx              # Root component
+│   ├── main.jsx             # Entry point
+│   └── index.css            # Global styles
+├── research-tools/          # Research methodology code
+│   ├── longitudinal-analysis/  # LCA/LTA implementations
+│   └── survey-automation/      # Data pipeline scripts
+├── docs/                    # Technical documentation
+│   ├── ARCHITECTURE.md      # System design
+│   ├── DATA_MODEL.md        # Database schema
+│   ├── API_SPEC.md          # API endpoints
+│   └── MEASUREMENT_FRAMEWORK.md  # Research methods
+├── public/                  # Static assets
+├── .github/workflows/       # CI/CD configuration
+└── package.json             # Dependencies + scripts
+```
+
+---
+
+## 🌐 Organizational Structure
+
+Atlas ERA operates through two legal entities to maximize global impact:
+
+### 🇲🇹 Atlas ERA Malta Foundation
+- 501(c)(3) equivalent nonprofit status
+- Research grants and philanthropic partnerships
+- Tax-deductible donations for U.S. contributors
+- Fiscal sponsorship for early-stage researchers
+
+### 🇫🇷 Atlas ERA France Association  
+- Loi 1901 nonprofit structure
+- European base for Global Curriculum Estates
+- Montpellier as pilot site for worldschooling community
+- Partnerships with French edtech networks
+
+**This dual structure enables:**
+✅ Cross-border fundraising and grant eligibility  
+✅ European visa pathways for researcher mobility  
+✅ Tax advantages in multiple jurisdictions
+
+---
+
+## 🤝 Join the Network
+
+Atlas ERA is building a **global community of practice** for:
+
+- 🌍 Worldschooling families documenting their pedagogical innovations
+- 🔬 Researchers studying alternative education and neurodivergent learning
+- 🏫 Educators designing trauma-informed, student-centered environments  
+- 💻 Technologists building tools for distributed learning communities
+
+### Membership Tiers
+
+| Tier | Price | Who It's For |
+|------|-------|-------------|
+| **Practitioner** | $15/mo | Worldschooling families, alternative educators |
+| **Researcher** | $25/mo | PhD students, postdocs, independent scholars |
+| **Institutional** | Custom | Universities, foundations, NGOs |
+| **Founding Circle** | $100/mo | Early supporters shaping research agenda |
+
+**[Join the Waitlist →](https://forms.gle/atlasera)** *(Beta launch Q1 2026)*
+
+---
+
+## 📊 Roadmap
+
+### Q1 2026
+- ✅ Website launch (current)
+- 🔄 Member portal beta (auth, profiles, forums)
+- 🔄 Research library v1 (semantic search, tagging)
+
+### Q2 2026
+- API development (REST + GraphQL)
+- Payment integration (Stripe)
+- Admin dashboard (content management)
+- First cohort of Researcher members
+
+### Q3 2026
+- Mobile app (React Native)
+- Collaborative research tools
+- Conference travel grant program
+- First published research from network
+
+### Q4 2026
+- Institutional partnerships (5+ universities)
+- Global Curriculum Estates pilot (Montpellier)
+- Measurement Ally integration
+- 500+ total members
+
+---
+
+## 🔬 Research Tools & Methodology
+
+This repository includes **production-ready research code** demonstrating our methodological approach:
+
+### `/research-tools/longitudinal-analysis`
+- Latent Class Analysis (LCA) implementations
+- Latent Transition Analysis (LTA) for tracking change over time  
+- Model comparison and class profiling scripts
+- **Language**: Python (scikit-learn) + R (poLCA)
+
+### `/research-tools/survey-automation`
+- Google Forms → Analysis pipeline
+- Likert scale recoding and data cleaning
+- Automated quality checks
+- **Language**: R (googlesheets4, tidyverse)
+
+See [docs/MEASUREMENT_FRAMEWORK.md](docs/MEASUREMENT_FRAMEWORK.md) for full methodology.
+
+---
+
+## 🧪 Contributing
+
+We welcome contributions from developers, researchers, and educators!
+
+### Development Workflow
+
+1. Fork repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Install dependencies (`npm install`)
+4. Make changes and test (`npm test`)
+5. Commit using [Conventional Commits](https://www.conventionalcommits.org/)
+6. Push to branch (`git push origin feature/amazing-feature`)
+7. Open Pull Request
+
+See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for detailed guidelines.
+
+### Code Quality Standards
+- ✅ ESLint + Prettier (auto-format on commit)
+- ✅ PropTypes for React components
+- ✅ Unit tests for utilities
+- ✅ Responsive design (mobile-first)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see [LICENSE](LICENSE) file for details.
+
+---
+
+## 📬 Contact & Support
+
+- **Email**: research@atlasera.org
+- **Website**: [atlasera.org](https://atlasera.org) *(coming soon)*
+- **GitHub Issues**: [Report bugs or request features](https://github.com/eltphd/atlasera/issues)
+- **Twitter**: [@atlasera_org](https://twitter.com/atlasera_org) *(coming soon)*
+
+For partnership inquiries: partnerships@atlasera.org
+
+---
+
+## 🙏 Acknowledgments
+
+Atlas ERA builds on the work of:
+- Dr. Erica L. Tartt's dissertation research (UCSB, 2024)
+- Worldschooling networks across 40+ countries
+- Neurodivergent educators and advocates
+- Open science and participatory research communities
+
+---
+
+**Built with ❤️ for the worldschooling community**
